@@ -3,38 +3,6 @@ from expression_type import ExpressionType
 
 months = {"JAN": 1, "FEB": 2, "MAR": 3,"APR": 4,"MAY": 5,"JUN": 6,"JUL": 7,"AUG": 8,"SEP": 9,"OCT": 10,"NOV": 11,"DEC": 12}
 
-def process_time(time_expression: str, is_minutes: bool) -> str:
-    # Inputs:
-    #   *
-    #   */15
-    #   1-10
-    #   1,2,3,4,5,25
-    #   20
-
-    if is_minutes:
-        max_value = 60
-    else:
-        max_value = 24
-
-    if time_expression == "*":
-        output_time_list = [str(minute) for minute in range(max_value)]
-        output_time = " ".join(output_time_list).strip()
-    elif "*/" in time_expression:
-        interval = int(time_expression.split("/")[1])
-        output_time_list = [str(minute) for minute in range(0, max_value, interval)]
-        output_time = " ".join(output_time_list).strip()
-    elif "-" in time_expression:
-        start = int(time_expression.split("-")[0])
-        end = int(time_expression.split("-")[1])
-        output_time_list = [str(minute) for minute in range(start, end+1)]
-        output_time = " ".join(output_time_list).strip()
-    elif "," in time_expression:
-        output_time = time_expression
-    else:
-        output_time = time_expression
-
-    return output_time
-
 def process_date(date_expression: str, type: ExpressionType) -> str:
     # Inputs:
     #   *
