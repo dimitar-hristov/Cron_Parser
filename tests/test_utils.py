@@ -1,7 +1,6 @@
 import pytest
 
-from src.utils.utils import (is_syntax_valid, process_expression,
-                             values_are_in_range)
+from src.utils import utils
 
 
 @pytest.mark.parametrize(
@@ -22,7 +21,7 @@ from src.utils.utils import (is_syntax_valid, process_expression,
     ],
 )
 def test_is_syntax_valid(expression, expected_output):
-    actual = is_syntax_valid(expression=expression)
+    actual = utils.is_syntax_valid(expression=expression)
     assert expected_output == actual
 
 
@@ -42,7 +41,7 @@ def test_is_syntax_valid(expression, expected_output):
     ],
 )
 def test_values_are_in_range(expression, min_value, max_value, expected_output):
-    actual = values_are_in_range(
+    actual = utils.values_are_in_range(
         expression=expression, min_value=min_value, max_value=max_value
     )
     assert expected_output == actual
@@ -59,7 +58,7 @@ def test_values_are_in_range(expression, min_value, max_value, expected_output):
     ],
 )
 def test_process_expression(expression, min_value, max_value, expected_output):
-    actual = process_expression(
+    actual = utils.process_expression(
         expression=expression, min_value=min_value, max_value=max_value
     )
     assert expected_output == actual

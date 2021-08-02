@@ -1,9 +1,7 @@
 import sys
 
+from utils import utils
 from utils.const import ARGS_MIN_AND_MAX_VALUES, ORDER_OF_ARGS
-from utils.expression_type import ExpressionType
-from utils.utils import (is_syntax_valid, process_expression,
-                         values_are_in_range)
 
 cron_expression = sys.argv[1].split(" ")
 
@@ -14,11 +12,11 @@ if len(cron_expression) == 6:
         min_value = ARGS_MIN_AND_MAX_VALUES.get(ORDER_OF_ARGS[i])[0]
         max_value = ARGS_MIN_AND_MAX_VALUES.get(ORDER_OF_ARGS[i])[1]
 
-        if is_syntax_valid(expression=expression) and values_are_in_range(
+        if utils.is_syntax_valid(expression=expression) and utils.values_are_in_range(
             expression=expression, min_value=min_value, max_value=max_value
         ):
             output.append(
-                process_expression(
+                utils.process_expression(
                     expression=expression, min_value=min_value, max_value=max_value
                 )
             )

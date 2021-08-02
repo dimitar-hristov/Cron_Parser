@@ -5,8 +5,8 @@ freeze:
 test:
 	pytest tests/
 format-check:
-	black --check ./src/* ./tests/*
-	flake8 ./src/* ./tests/*
+	black --check ./src ./tests
+	flake8 ./src ./tests
 format:
-	black ./src/* ./tests/*
-	isort ./src/* ./tests/*
+	black ./src ./tests
+	isort ./src ./tests
