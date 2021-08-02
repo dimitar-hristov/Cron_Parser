@@ -1,5 +1,5 @@
 import pytest
-from utils.utils import is_syntax_valid, process_expression, values_are_in_range
+from src.utils.utils import is_syntax_valid, process_expression, values_are_in_range
 
 @pytest.mark.parametrize(
 "expression, expected_output", 
