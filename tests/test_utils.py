@@ -38,6 +38,7 @@ def test_is_syntax_valid(expression, expected_output):
         ("1-21", 0, 20, False),
         ("1,2,35,25", 0, 30, False),
         ("220", 0, 30, False),
+        ("-220", 0, 30, False),
     ],
 )
 def test_values_are_in_range(expression, min_value, max_value, expected_output):
