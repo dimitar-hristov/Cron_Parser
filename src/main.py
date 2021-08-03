@@ -1,7 +1,6 @@
 import sys
 
-from utils import utils
-from utils import const
+from utils import const, utils
 
 
 def main() -> str:
@@ -42,7 +41,7 @@ def main() -> str:
             f"{'command'.ljust(14)}{output[5]}"
         )
     else:
-        return(
+        return (
             "Cron Expression Parser. \n"
             "You need to provide a single string specifying: \n"
             "\t- minutes; \n"
