@@ -1,7 +1,8 @@
 import sys
 
 from src.utils import const
-from src.utils.utils import is_syntax_valid, values_are_in_range, process_expression
+from src.utils.utils import (is_syntax_valid, process_expression,
+                             values_are_in_range)
 
 
 def main() -> str:
@@ -14,9 +15,7 @@ def main() -> str:
             min_value = const.ARGS_MIN_AND_MAX_VALUES.get(const.ORDER_OF_ARGS[i])[0]
             max_value = const.ARGS_MIN_AND_MAX_VALUES.get(const.ORDER_OF_ARGS[i])[1]
 
-            if is_syntax_valid(
-                expression=expression
-            ) and values_are_in_range(
+            if is_syntax_valid(expression=expression) and values_are_in_range(
                 expression=expression, min_value=min_value, max_value=max_value
             ):
                 output.append(
