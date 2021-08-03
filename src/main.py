@@ -3,9 +3,9 @@ import sys
 from utils import utils
 from utils.const import ARGS_MIN_AND_MAX_VALUES, ORDER_OF_ARGS
 
-cron_expression = sys.argv[1].split(" ")
-
-if len(cron_expression) == 6:
+# If no argument is provided or there is a missing element, print a help message
+if len(sys.argv) == 2 and len(sys.argv[1].split(" ")) == 6:
+    cron_expression = sys.argv[1].split(" ")
     output = []
     for i in range(5):
         expression = cron_expression[i].strip()
@@ -34,4 +34,12 @@ if len(cron_expression) == 6:
     print(f"{'day of week'.ljust(14)}{output[4]}")
     print(f"{'command'.ljust(14)}{output[5]}")
 else:
-    print("Invalid input!")
+    print("Cron Expression Parser. \n"
+        "You need to provide a single string specifying: \n"
+        "\t- minutes; \n"
+        "\t- hours \n"
+        "\t- day of month \n"
+        "\t- month \n"
+        "\t- day of week; \n"
+        "\t- and the command as a cron expression. \n"
+    )
