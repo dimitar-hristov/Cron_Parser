@@ -35,6 +35,7 @@ def test_is_syntax_valid(expression, expected_output):
         ("10,2,3,25", 0, 30, True),
         ("22", 0, 30, True),
         ("*/15", 0, 14, False),
+        ("20-1", 0, 20, False),
         ("1-21", 0, 20, False),
         ("1,2,35,25", 0, 30, False),
         ("220", 0, 30, False),

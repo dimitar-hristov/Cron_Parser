@@ -57,6 +57,8 @@ def values_are_in_range(expression: str, min_value: int, max_value: int) -> bool
         for value in values:
             if int(value) < min_value or int(value) > max_value:
                 return False
+        if int(values[0]) >= int(values[1]):
+            return False
     # 1,2,3,4,5,25
     elif re.search(r"^[0-9]+(,[0-9]+)+$", expression):
         values = expression.split(",")

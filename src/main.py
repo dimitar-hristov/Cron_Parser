@@ -5,7 +5,7 @@ from utils import const, utils
 
 def main() -> str:
     # If no argument is provided or there is a missing element, print a help message
-    if len(sys.argv) == 2 and len(sys.argv[1].split(" ")) == 6:
+    if len(sys.argv) == 2 and len(sys.argv[1].strip().split(" ")) == 6:
         cron_expression = sys.argv[1].split(" ")
         output = []
         for i in range(5):
