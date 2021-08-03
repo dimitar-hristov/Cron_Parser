@@ -1,6 +1,7 @@
 import sys
 
-from utils import const, utils
+from src.utils import const
+from src.utils.utils import is_syntax_valid, values_are_in_range, process_expression
 
 
 def main() -> str:
@@ -13,13 +14,13 @@ def main() -> str:
             min_value = const.ARGS_MIN_AND_MAX_VALUES.get(const.ORDER_OF_ARGS[i])[0]
             max_value = const.ARGS_MIN_AND_MAX_VALUES.get(const.ORDER_OF_ARGS[i])[1]
 
-            if utils.is_syntax_valid(
+            if is_syntax_valid(
                 expression=expression
-            ) and utils.values_are_in_range(
+            ) and values_are_in_range(
                 expression=expression, min_value=min_value, max_value=max_value
             ):
                 output.append(
-                    utils.process_expression(
+                    process_expression(
                         expression=expression,
                         min_value=min_value,
                         max_value=max_value,
@@ -51,11 +52,3 @@ def main() -> str:
             "\t- day of week; \n"
             "\t- and the command as a cron expression."
         )
-
-
-if __name__ == "__main__":
-    try:
-        result = main()
-        print(result)
-    except Exception as e:
-        print(e)

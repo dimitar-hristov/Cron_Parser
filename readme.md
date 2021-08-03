@@ -3,7 +3,7 @@ CLI tool which parses a cron string and expands each field to show the times at 
 
 Example:
 ```bash
-python src/main.py "*/15 0 1,15 * 1-5 /usr/bin/find"
+python cron_parser.py "*/15 0 1,15 * 1-5 /usr/bin/find"
 ```
 
 will result in:

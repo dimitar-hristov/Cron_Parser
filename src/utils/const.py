@@ -1,4 +1,4 @@
-from utils.expression_type import ExpressionType
+from src.utils.expression_type import ExpressionType
 
 ORDER_OF_ARGS = [
     ExpressionType.MINUTES,
